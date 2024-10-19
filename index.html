@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>String Methods</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>String Methods</h1>
 
@@ -11,16 +13,31 @@
         <textarea name="input" id="input" placeholder="Enter Your text here..."></textarea>
 
         <div class="btn-container">
-            <button class="btn">Upper case</button>
-            <button class="btn">lower case</button>
-            <button class="btn">word count</button>
-            <button class="btn">character count</button>
+            <button class="btn" onclick="doUpperCase()">Upper case</button>
+            <button class="btn" onclick="doLowerCase()">Lower case</button>
+            <button class="btn" onclick="countWords()">Word count</button>
+            <button class="btn" onclick="countCharacters()">Character count</button>
         </div>
-        <textarea name="output" id="input" placeholder="output will be displayed here..."></textarea>
+        <textarea name="output" id="output" placeholder="output will be displayed here..."></textarea>
     </div>
-
-
     <script>
+        const inputElement = document.getElementById("input");
+        const outputElement = document.getElementById("output");
+
+        function doUpperCase() {
+            outputElement.value = inputElement.value.toUpperCase();
+        }
+        function doLowerCase() {
+            outputElement.value = inputElement.value.toLowerCase();
+        }
+        function countWords() {
+            
+            outputElement.value = `Word Count : ${inputElement.value.split(" ").length}`;
+        }
+        function countCharacters() {
+            outputElement.value = `Character count : ${inputElement.value.length}`;
+        }
+
 
     </script>
 </body>
